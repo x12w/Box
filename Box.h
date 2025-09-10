@@ -17,10 +17,10 @@ namespace BOX {
         coordinate_system *belonged_system;//point to the coordinate system that the point belond to
         bool movable[4];//whether the point can move to that direction
         public:
-        Struct &get_Struct();//get the struct that the point belonged to
-        const int &get_x();//get the x location
-        const int &get_y();//get the y location
-        void move(direction dir);//try to move the point to the gived direction
+        Struct &get_Struct()const;//get the struct that the point belonged to
+        const int &get_x()const;//get the x location
+        const int &get_y()const;//get the y location
+        bool move(direction dir);//try to move the point to the gived direction
         void refresh();//refresh the movable situation of the point
         /*the constructor methods*/
         Point(const int &_x, const int &_y);
