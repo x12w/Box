@@ -33,7 +33,14 @@ namespace BOX {
         std::vector<Point*> points;//the points that the struct include
         bool movable[4];//whether the struct could move
         static int number;//the total number of structs
-
+        public:
+        bool move(enum direction dir);//try to move the struct and return the result
+        void refresh();//refresh the movable of the struct
+        std::vector<Point*> get_points();//get the points belong to the struct
+        const int &get_number();//get the number of the structs
+        /*the constructor methods*/
+        explicit Struct(std::vector<Point*> _points);
+        Struct();
     };
     /*moniter the points*/
     class coordinate_system {
@@ -47,7 +54,6 @@ namespace BOX {
         /*the constructor methods*/
         coordinate_system(const int &_x, const int &_y);
         coordinate_system();
-
 
     };
 
