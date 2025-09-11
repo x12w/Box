@@ -16,34 +16,31 @@ namespace BOX {
         return y;
     }
     bool Point::move(direction dir) {
-        if (movable[dir]) {
-            switch (dir) {
-                case UP:
-                    y += 1;
-                    break;
-                    case DOWN:
-                    y -= 1;
-                    break;
-                    case LEFT:
-                    x -= 1;
-                    break;
-                    case RIGHT:
-                    x += 1;
-                    break;
-            }
-            Point::refresh();
-            return true;
+        switch (dir) {
+            case UP:
+                y += 1;
+                break;
+            case DOWN:
+                y -= 1;
+                break;
+            case LEFT:
+                x -= 1;
+                break;
+            case RIGHT:
+                x += 1;
+                break;
         }
         return false;
     }
     void Point::refresh() {
-        for (auto i : movable) {
-            switch (i) {
-                case UP:
-
-            }
+        for (int i = 0; i < 4; i++) {
+            movable[i] = get_movable(static_cast<direction>(i));
         }
     }
+    bool Point::get_movable(direction dir) {
+
+    }
+
 
 
 
