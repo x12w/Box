@@ -3,11 +3,15 @@
 //
 #include <iostream>
 #include <vector>
+#include <unordered_set>
 #include "Box.h"
 
 namespace BOX {
-    Struct &Point::get_Struct() const {
-        return *main_struct;
+    Struct *Point::get_Struct() const {
+        return main_struct;
+    }
+    coordinate_system *Point::get_belonged_system() const {
+        return belonged_system;
     }
     const int &Point::get_x() const {
         return x;
@@ -43,6 +47,15 @@ namespace BOX {
 
 
 
-
+    void Struct::get_immediately_adjacent_point(direction dir) const {
+        for (auto point : points) {
+            switch (dir) {
+                case UP:
+                    if (point -> get_belonged_system() -> isEmpty(point -> get_x(),point -> get_y() + 1)) {
+                        immediately_adjacent_empty_point[UP].insert()
+                    }
+            }
+        }
+    }
 
 }
